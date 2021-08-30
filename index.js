@@ -17,7 +17,7 @@ const pk3 = "";
 const pk4 = "";
 const pk5 = "";
 
-const Lib_AddressManagerAddress = "0x4e57A993D14FF6f2BCA23d9B174faA9c7AdC4A5A"
+const Lib_AddressManagerAddress = ""
 
 const depositERC20 = async (pk) => {
   // get address
