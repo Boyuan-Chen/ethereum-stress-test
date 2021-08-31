@@ -1,23 +1,25 @@
 const ethers = require('ethers');
 const { Watcher } = require('@eth-optimism/watcher');
+const dotenv = require('dotenv');
+dotenv.config()
 
 const sampleJson = require("./artifacts-ovm/contracts/Sample.sol/Sample.json");
 const Lib_AddressManagerJson = require("./Lib_AddressManager.json");
 const OVM_L1StandardBridgeJson = require("./OVM_L1StandardBridge.json");
 
-const L1_NODE_WEB3_URL = "https://rinkeby.infura.io/v3/KEY";
+const L1_NODE_WEB3_URL = process.env.L1_NODE_WEB3_URL;
 const L1Web3 = new ethers.providers.JsonRpcProvider(L1_NODE_WEB3_URL);
 
-const L2_NODE_WEB3_URL = "https://rinkeby-integration.boba.network";
+const L2_NODE_WEB3_URL = process.env.L2_NODE_WEB3_URL;
 const L2Web3 = new ethers.providers.JsonRpcProvider(L2_NODE_WEB3_URL);
 
-const pk1 = ""
-const pk2 = ""
-const pk3 = "";
-const pk4 = "";
-const pk5 = "";
+const pk1 = process.env.PK1;
+const pk2 = process.env.PK2;
+const pk3 = process.env.PK3;
+const pk4 = process.env.PK4;
+const pk5 = process.env.PK5;
 
-const Lib_AddressManagerAddress = ""
+const Lib_AddressManagerAddress = process.env.ADDRESS_MANAGER_ADDRESS;
 
 const depositERC20 = async (pk) => {
   // get address
